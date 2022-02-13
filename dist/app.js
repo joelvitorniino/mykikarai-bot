@@ -46,7 +46,7 @@ async function connectToWhatsapp() {
                 });
             }    
         } catch(e) {
-            console.log("ih")
+            console.log("");
         }
         if (m.message.imageMessage && m.message.imageMessage.caption === '.s') {
             const stream = await (0, baileys_1.downloadContentFromMessage)(m.message.imageMessage, 'image');
