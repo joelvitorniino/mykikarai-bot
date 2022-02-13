@@ -35,14 +35,18 @@ async function connectToWhatsapp() {
     sock.ev.on('messages.upsert', async ({ messages }) => {
         var e_1, _a, e_2, _b;
         const m = messages[0];
-        if (String(m.message.extendedTextMessage.text).toLowerCase() === '.comandos' || String(m.message.extendedTextMessage.text).toLowerCase() === '.help' || String(m.message.extendedTextMessage.text).toLowerCase() === '.menu') {
-            await sock.sendMessage(m.key.remoteJid, {
-                text: `Bem vindo ao bot do Mykikarai Scan, a melhor scan br de kakegurui!
-
-.s - Para fazer figurinhas de gif ou imagem (Obs: Só está funcionando por enquanto com essa palavra na legenda!), alguns gifs não poderão funcionar. 
-                
-Em Breve teremos mais comandos, lembrando que a volta do desenvolvedor do NiinoBot será devagar.`
-            });
+        try {
+            if (String(m.message.extendedTextMessage.text).toLowerCase() === '.comandos' || String(m.message.extendedTextMessage.text).toLowerCase() === '.help' || String(m.message.extendedTextMessage.text).toLowerCase() === '.menu') {
+                await sock.sendMessage(m.key.remoteJid, {
+                    text: `Bem vindo ao bot do Mykikarai Scan, a melhor scan br de kakegurui!
+    
+    .s - Para fazer figurinhas de gif ou imagem (Obs: Só está funcionando por enquanto com essa palavra na legenda!), alguns gifs não poderão funcionar. 
+                    
+    Em Breve teremos mais comandos, lembrando que a volta do desenvolvedor do NiinoBot será devagar.`
+                });
+            }    
+        } catch(e) {
+            console.log("ih")
         }
         if (m.message.imageMessage && m.message.imageMessage.caption === '.s') {
             const stream = await (0, baileys_1.downloadContentFromMessage)(m.message.imageMessage, 'image');
