@@ -8,13 +8,10 @@
   "dependencies": {
     "@adiwajshing/baileys": "^4.0.0",
     "@hapi/boom": "^9.1.4",
-    "qrcode-terminal": "^0.12.0",
-    "tsc": "^2.0.4",
-    "typescript": "^4.5.5"
+    "qrcode-terminal": "^0.12.0"
   },
   "scripts": {
     "dev": "ts-node-dev src/app.ts",
-    "build": "tsc --build",
     "web": "node dist/app.js"
   }
 }
