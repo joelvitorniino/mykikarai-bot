@@ -42,7 +42,9 @@ async function connectToWhatsapp() {
     
     .s - Para fazer figurinhas de gif ou imagem (Obs: Só está funcionando por enquanto com essa palavra na legenda!), alguns gifs não poderão funcionar. 
                     
-    Em Breve teremos mais comandos, lembrando que a volta do desenvolvedor do NiinoBot será devagar.`
+    Em Breve teremos mais comandos, lembrando que a volta do desenvolvedor do NiinoBot será devagar.
+    
+    Criador: wa.me/+5521969693229`
                 });
             }    
         } catch(e) {
