@@ -31,7 +31,7 @@ async function connectToWhatsapp() {
     sock.ev.on('messages.upsert', async ({ messages }) => {
         const m = messages[0];
 
-        if(m.message.extendedTextMessage.text === '.comandos' || m.message.extendedTextMessage.text === '.help' || m.message.extendedTextMessage.text === '.menu') {
+        if(String(m.message.extendedTextMessage.text).toLowerCase() === '.comandos' || String(m.message.extendedTextMessage.text).toLowerCase() === '.help' || String(m.message.extendedTextMessage.text).toLowerCase() === '.menu') {
             await sock.sendMessage(m.key.remoteJid!, {
                 text: `Bem vindo ao bot do Mykikarai Scan, a melhor scan br de kakegurui!
 
